@@ -39,7 +39,7 @@ function TableName()
                 </Grid>
             </Grid>
         </Container>
-        <DialogBox open={open} handleClose={handleClose}>
+        <DialogBox open={open} handleClose={handleClose} title='Enter Table Details'>
             <TableForm></TableForm>
         </DialogBox>    
         </div>

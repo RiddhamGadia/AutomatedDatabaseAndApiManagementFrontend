@@ -5,7 +5,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 const DialogBox = (props) => {
     return ( 
     <Dialog open={props.open} onClose={props.handleClose}>
-        <DialogTitle>Subscribe</DialogTitle><br/>
+        <DialogTitle>{props.title}</DialogTitle><br/>
         <DialogContent>
           <DialogContentText>
             {props.children}

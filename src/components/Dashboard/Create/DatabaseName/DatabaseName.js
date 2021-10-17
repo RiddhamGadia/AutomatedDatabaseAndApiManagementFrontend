@@ -41,7 +41,7 @@ function DatabaseName()
                 </Grid>
             </Grid>
         </Container>
-        <DialogBox open={open} handleClose={handleClose}>
+        <DialogBox open={open} handleClose={handleClose} title="Enter Database Detail">
             <DatabaseForm></DatabaseForm>
         </DialogBox>
         </div>
