@@ -1,9 +1,7 @@
 import MaterialTable from "material-table";
 import { useState } from 'react';
 
-// npm install material-table --save : install dependencies
-
-const MTable = () => {
+const UTable = () => {
     const got = [
         { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
         { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
@@ -27,9 +25,9 @@ const MTable = () => {
 
     return (  
         <div>
-            <h4>Material Table with Crud Operations</h4>
+            <h1>User Table</h1>
             <MaterialTable
-            title="Game Of Thrones"
+            title="User Tabel"
             data={data}
             columns={columns}
             editable={{
@@ -76,4 +74,4 @@ const MTable = () => {
     );
 }
  
-export default MTable;
+export default UTable;

@@ -94,10 +94,10 @@ export default function PermanentDrawerLeft() {
       >
         <Toolbar />
         <Switch>
-        <Route path='/dashboard/endpoints'/>
-        <Route path='/dashboard/create'  component={Create}/>
-        <Route path='/dashboard/accounts'  />
-        <Route path='/dashboard/logout'  />
+        <Route exact path='/dashboard/endpoints'/>
+        <Route exact path='/dashboard/create'  component={Create}/>
+        <Route exact path='/dashboard/accounts'  />
+        <Route exact path='/dashboard/logout'  />
         </Switch>
         
         {/* <Typography paragraph>
