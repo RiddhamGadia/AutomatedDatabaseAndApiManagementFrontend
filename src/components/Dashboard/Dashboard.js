@@ -18,6 +18,8 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { useHistory } from 'react-router';
 import { Switch, Route} from 'react-router-dom';
 import Create from './Create/Create';
+import Accounts from './Accounts/Accounts';
+import Endpoints from './Endpoints/Endpoints';
 const drawerWidth = 240;
 
 export default function PermanentDrawerLeft() {
@@ -94,9 +96,9 @@ export default function PermanentDrawerLeft() {
       >
         <Toolbar />
         <Switch>
-        <Route exact path='/dashboard/endpoints'/>
+        <Route exact path='/dashboard/endpoints' component={Endpoints}/>
         <Route exact path='/dashboard/create'  component={Create}/>
-        <Route exact path='/dashboard/accounts'  />
+        <Route exact path='/dashboard/accounts' component={Accounts} />
         <Route exact path='/dashboard/logout'  />
         </Switch>
         
