@@ -28,14 +28,34 @@ const UTable = () => {
     ]
     
     const [data, setData] = useState(got);
-
+    const [selectedRows, setSelectedRows] = useState([]);
+    const handleBulkDelete = () => {
+        const updatedData = data.filter(row=>!selectedRows.includes(row))
+        setData(updatedData);
+    }
     return (  
         <div>
-            <h1>User Table</h1>
+            <h4>User Table</h4>
             <MaterialTable
-            title="User Tabel"
+            title="My table"
             data={data}
             columns={columns}
+            options={{
+                //actionsColumnIndex: -1,
+                //addRowPosition: 'first'
+                selection: true
+            }}
+            onSelectionChange={(rows)=>setSelectedRows(rows)}
+            actions={
+                [
+                    {
+                        icon: 'delete',
+                        tooltip:"Delete all selected..",
+                        onClick:()=>handleBulkDelete()
+                    }
+                ]
+            }
+            
             editable={{
                 onRowAdd:(newRow)=>new Promise((resolve,reject)=>{
                     const updatedRows = [...data, newRow]
@@ -64,14 +84,23 @@ const UTable = () => {
                         resolve()
                     },2000)
                     //console.log("updated row: ", newRow)
+                }),
+                onBulkUpdate:selectedRows=> new Promise((resolve,reject)=>{
+                    const rows = Object.values(selectedRows)
+                    const updatedRows = [...data]
+                    let index;
+                    rows.map(emp=>{
+                        index=emp.oldData.tableData.id;
+                        updatedRows[index]=emp.newData;
+                    })
+                    setTimeout(()=>{
+                        setData(updatedRows)
+                        resolve()
+                    }, 2000)
+
                 })
-                
             }}
-            options={{
-                //actionsColumnIndex: -1,
-                //addRowPosition: 'first'
-                
-            }}
+            
             />
         </div>
         

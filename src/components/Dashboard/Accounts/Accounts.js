@@ -1,10 +1,13 @@
 import React from 'react'
 import Container from '@mui/material/Container'
 import Divider from '@mui/material/Divider'
-import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
+import {useState} from 'react'
 
 const Accounts = () => {
+
+  const[name,setName]=useState("riddham");
+  const [apikey, setApikey]= useState('3f32fsdf3434sf');
     return (
       <Container>
         {/* <Typography
@@ -20,7 +23,7 @@ const Accounts = () => {
         <TextField
           disabled
           id="outlined-disabled"
-          defaultValue="Riddham"
+          value={name}
           margin='normal'
           //sx={{alignContent: 'flex-start'}}
 
@@ -39,7 +42,7 @@ const Accounts = () => {
         <TextField
           disabled
           id="outlined-disabled"
-          defaultValue="6mkmcke57jfhJDM23rceuvJJkLMOsc"
+          value={apikey}
           margin='normal'
           //label=""
           //sx={{alignContent:'left'}}
@@ -51,7 +54,9 @@ const Accounts = () => {
          align='left'>
          Change Password
         </Typography> */}
-        <h3> Change Password</h3>
+
+
+        {/* <h3> Change Password</h3>
         <Divider />
         <Button
         type="submit"
@@ -64,7 +69,7 @@ const Accounts = () => {
         onClick={()=>console.log("Change Password Modal")}
         >
         Change Password
-        </Button>
+        </Button> */}
 
         {/* <Typography
         variant='h5'
@@ -74,7 +79,8 @@ const Accounts = () => {
         >
           Delete Account
         </Typography> */}
-        <h3>Delete Account</h3>
+
+        {/* <h3>Delete Account</h3>
         <Divider />
         <Button
         color='error'
@@ -84,7 +90,7 @@ const Accounts = () => {
         }}
         >
           Delete Account
-        </Button>
+        </Button> */}
         
 
       </Container>  

@@ -23,9 +23,6 @@ const TableForm = () => {
                         <Grid item >
                             <TextField id="outlined-basic" label="Column Type" variant="outlined" />
                         </Grid>
-                        <Grid item>
-                            <TextField id="outlined-basic" label="Column Data" variant="outlined" />
-                        </Grid>
                         </div>
                     ))
                 }
