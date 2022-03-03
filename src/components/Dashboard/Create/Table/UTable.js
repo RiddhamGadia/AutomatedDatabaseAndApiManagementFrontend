@@ -21,7 +21,7 @@ const UTable = () => {
     ]
 
     const columns=[
-        {title: 'ID', field: 'id', editable: false},
+        {title: 'ID', field: 'id',editable: false},
         {title: 'First Name', field: 'firstName'},
         {title: 'Last Name', field: 'lastName'},
         {title: 'Age', field: 'age'},

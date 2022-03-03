@@ -20,6 +20,7 @@ const Login = () => {
 
     const onSubmit= ()=>{
         console.log(`email is ${email} and password is ${password}`);
+        // localStorage.setItem("isAuthenticated",'true');
         // axios.post("https://backend-fyp.herokuapp.com/api/frontend/login",{
         //     "email": email,
         //     "password":password
@@ -44,11 +45,6 @@ const Login = () => {
                 <TextField label='Email' placeholder='Enter email' value={email} onChange={changeEmail} fullWidth required/><br/><br/>
                 <TextField label='Password' placeholder='Enter password' value={password} onChange={changePassword} type='password' fullWidth required/>
                 <Button type='submit' color='primary' variant="contained" style={btnstyle} onClick={onSubmit} fullWidth>Sign in</Button>
-                <Typography >
-                     <Link href="#" >
-                        Forgot password ?
-                </Link>
-                </Typography>
                 <Typography > Do you have an account ?
                      <Link href="/signup" >
                         Sign Up 

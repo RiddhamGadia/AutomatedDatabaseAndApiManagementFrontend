@@ -1,15 +1,15 @@
-import { Grid, Paper, Avatar, Typography, TextField, Button } from '@mui/material'
+import { Grid, Paper, Avatar, TextField, Button } from '@mui/material'
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material//AddCircleOutlineOutlined';
 import {useState} from 'react';
-import axios from "axios";
-import { useHistory } from 'react-router';
+// import axios from "axios";
+// import { useHistory } from 'react-router';
 
 const Signup = () => {
 
     const [name,setName]=useState("");
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
-    const history=useHistory();
+    // const history=useHistory();
 
     const changeEmail= (event)=>{
         setEmail(event.target.value);
@@ -25,17 +25,18 @@ const Signup = () => {
 
     const onSubmit= ()=>{
         console.log(` name is ${name} email is ${email} and password is ${password}`);
-    const body = {
-        name,
-        email,
-        password
-    }
-    console.log(body);
-        axios.post("https://backend-fyp.herokuapp.com/api/frontend/register",body).then(
-            response=>{
-                history.push('/dashboard');
-            }
-        ).catch(error=>console.log(error.message));
+        // localStorage.setItem("isAuthenticated",'true');
+    // const body = {
+    //     name,
+    //     email,
+    //     password
+    // }
+    // console.log(body);
+    //     axios.post("https://backend-fyp.herokuapp.com/api/frontend/register",body).then(
+    //         response=>{
+    //             history.push('/dashboard');
+    //         }
+    //     ).catch(error=>console.log(error.message));
     }
 
     const paperStyle = { padding: '30px 20px', width: 300, margin: "20px auto" }

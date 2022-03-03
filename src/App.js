@@ -11,18 +11,18 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route exact path='/login'>
+          <Route path='/login'>
             <Login />
           </Route>
-          <Route exact path='/signup'>
+          <Route path='/signup'>
             <Signup />
           </Route>
           <Route path='/dashboard'>
             <Dashboard />
           </Route>
-          <Route path='/table'>
+          {/* <Route path='/table'>
             <UTable />
-          </Route>
+          </Route> */}
         </Switch>
       </div>
     </Router>    

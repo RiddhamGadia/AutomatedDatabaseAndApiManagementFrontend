@@ -29,7 +29,7 @@ const Endpoints = () => {
                 <MenuItem value={'riddham/db1'}>db1</MenuItem>
                 <MenuItem value={'riddham/db2'}>db2</MenuItem>
                 <MenuItem value={'riddham/db3'}>db3</MenuItem>
-            </TextField><br/>
+            </TextField><br/><br/>
 
             {/* <Typography
                 variant='h6'
@@ -38,10 +38,10 @@ const Endpoints = () => {
             >
                 Enter Api Key
             </Typography><br /> */}
-            <h3> Enter Api Key</h3>
+            {/* <h3> Enter Api Key</h3>
             <TextField id="standard-basic" label="Standard" variant="standard"
                 margin='normal'
-            /><br/>
+            /><br/> */}
 
             <TextField
                 id="standard-read-only-input"
@@ -60,29 +60,3 @@ const Endpoints = () => {
 }
 
 export default Endpoints;
-
-/*
-
- const [age, setAge] = React.useState('');
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
-
-
-<InputLabel id="demo-simple-select-standard-label">Age</InputLabel>
-        <Select
-          labelId="demo-simple-select-standard-label"
-          id="demo-simple-select-standard"
-          value={age}
-          onChange={handleChange}
-          label="Age"
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-*/
