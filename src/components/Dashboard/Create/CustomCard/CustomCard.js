@@ -5,15 +5,16 @@ import { DeleteOutlined } from '@mui/icons-material';
 const CustomCard = (props) => {
     return ( 
             <Card elevation={3}>
-                <CardActionArea>
+                <CardActionArea onClick={()=>{props.uponClick(props.name)}}>
                 <CardHeader
-                    action={
-                        <IconButton onClick={()=>{
-                            console.log('delete');
-                        }}>
-                            <DeleteOutlined/>
-                        </IconButton>
-                    }
+                    // action={
+                    //     <IconButton onClick={()=>{
+                    //         console.log('delete',props.name);
+                    //         props.onDelete(props.name);
+                    //     }}>
+                    //         <DeleteOutlined/>
+                    //     </IconButton>
+                    // }
                     title={props.name}
                 />
                 </CardActionArea>
