@@ -21,7 +21,7 @@ function Create()
     return(
         <div>
             <h3> Databases </h3>
-            <DatabaseName/>
+            <DatabaseName data={obj}/>
             <br/><br/>
             <Divider/>
             <h3> Tables </h3>

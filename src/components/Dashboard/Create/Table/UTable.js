@@ -20,12 +20,18 @@ const UTable = () => {
         { id: 15, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
     ]
 
-    const columns=[
-        {title: 'ID', field: 'id',editable: false},
-        {title: 'First Name', field: 'firstName'},
-        {title: 'Last Name', field: 'lastName'},
-        {title: 'Age', field: 'age'},
-    ]
+    // const columns=[
+    //     {title: 'ID', field: 'id'},
+    //     {title: 'First Name', field: 'firstName'},
+    //     {title: 'Last Name', field: 'lastName'},
+    //     {title: 'Age', field: 'age'},
+    // ];
+    const columns=[];
+    var a= Object.keys(got[0]);
+    for(var i=0;i<a.length;i++){
+    var b=a[i];
+    columns.push({'title':b,'field':b})};
+    // In above I have added the columns
     
     const [data, setData] = useState(got);
     const [selectedRows, setSelectedRows] = useState([]);
@@ -41,8 +47,6 @@ const UTable = () => {
             data={data}
             columns={columns}
             options={{
-                //actionsColumnIndex: -1,
-                //addRowPosition: 'first'
                 selection: true
             }}
             onSelectionChange={(rows)=>setSelectedRows(rows)}

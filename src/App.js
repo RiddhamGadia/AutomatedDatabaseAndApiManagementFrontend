@@ -20,9 +20,9 @@ function App() {
           <Route path='/dashboard'>
             <Dashboard />
           </Route>
-          {/* <Route path='/table'>
+          <Route path='/table'>
             <UTable />
-          </Route> */}
+          </Route>
         </Switch>
       </div>
     </Router>    
