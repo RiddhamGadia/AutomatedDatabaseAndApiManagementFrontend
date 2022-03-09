@@ -22,6 +22,9 @@ import Endpoints from './Endpoints/Endpoints';
 import Guide from './Guide/Guide';
 import Form from './Create/Form/Form';
 import ProtectedRoute from './ProtectedRoute';
+// import axios from "axios";
+// import { useEffect } from 'react';
+// import CircularProgress from '@mui/material/CircularProgress';
 // import UTable from './Create/Table/UTable';
 const drawerWidth = 240;
 
@@ -30,7 +33,8 @@ export const ApiKey = React.createContext();
 
 export default function PermanentDrawerLeft() {
 
-  const name='Riddham';
+  const [name,changeName]=React.useState("Riddham");
+  const [api,changeApi]=React.useState("");
   const history = useHistory();
   const menuItems = [
     {
@@ -55,13 +59,27 @@ export default function PermanentDrawerLeft() {
     },
   ]
 
-
+  // useEffect(() => {
+  //   console.log(localStorage.getItem("id"));
+  //   if(localStorage.getItem("isAuthenticated"))
+  //   axios.post("https://backend-fyp.herokuapp.com/api/frontend/genAuthToken",{
+  //       "id": localStorage.getItem("id"),
+  //   }).then(
+  //       response=>{
+  //           console.log(response);
+  //           localStorage.setItem("token",response.data.token);
+  //           // localStorage.setItem('');
+  //           // changeName(response.data.username);
+  //           // changeApi(response.body.api);
+  //           changeSending(true);
+  //       }
+  //   ).catch(error=>{console.log(error);changeSending(true)});
+// },[])
 
   return (
-
     <div>
-      <UserName.Provider value={'riddham1'}>
-        <ApiKey.Provider value={'2jrjk3jkj'}>
+      <UserName.Provider value={name}>
+        <ApiKey.Provider value={api}>
           <Box sx={{ display: 'flex' }}>
             <CssBaseline />
             <AppBar

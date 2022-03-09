@@ -6,7 +6,6 @@ import Dashboard from './components/Dashboard/Dashboard';
 import UTable from './components/Dashboard/Create/Table/UTable';
 
 function App() {
-  console.log('called');
   return (
     <Router>
       <div className="App">
