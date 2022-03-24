@@ -21,7 +21,9 @@ import Accounts from './Accounts/Accounts';
 import Endpoints from './Endpoints/Endpoints';
 import Guide from './Guide/Guide';
 import Form from './Create/Form/Form';
+import Logout from './Logout/Logout';
 import ProtectedRoute from './ProtectedRoute';
+import ManageApi from './ManageApi/ManageApi'
 // import axios from "axios";
 // import { useEffect } from 'react';
 // import CircularProgress from '@mui/material/CircularProgress';
@@ -51,6 +53,11 @@ export default function PermanentDrawerLeft() {
       text: 'Accounts',
       icon: <AccountCircleIcon />,
       path: '/dashboard/accounts'
+    },
+    {
+      text: 'Manage API',
+      icon: <AccountCircleIcon />,
+      path: '/dashboard/manageApi'
     },
     {
       text: 'Logout',
@@ -128,8 +135,9 @@ export default function PermanentDrawerLeft() {
                 <ProtectedRoute exact path='/dashboard/endpoints' component={Endpoints} />
                 <ProtectedRoute exact path='/dashboard/create' component={Create} />
                 <ProtectedRoute exact path='/dashboard/accounts' component={Accounts} />
-                <ProtectedRoute exact path='/dashboard/logout' />
+                <ProtectedRoute exact path='/dashboard/logout' component={Logout} />
                 <ProtectedRoute exact path='/dashboard/form' component={Form} />
+                <ProtectedRoute exact path='/dashboard/manageApi' component={ManageApi} />
                 {/* <Route exact path="/dashboard/table/:id" component={UTable}/> */}
               </Switch>
             </Box>

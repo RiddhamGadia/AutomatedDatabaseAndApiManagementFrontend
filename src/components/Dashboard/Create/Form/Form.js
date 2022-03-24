@@ -58,7 +58,7 @@ function Form() {
                 }
             }).then(response => {
                 changeSending(false);
-                history.push('/database/create');
+                history.push('/dashboard/create');
             }).catch(error => console.log(error));
 
 
