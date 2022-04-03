@@ -20,6 +20,7 @@ const Endpoints = () => {
     const[maindbid,changemaindbid]=useState("");
     const[maintableid,changemaintablebid]=useState("");
     const[maintype,changemaintype]=useState("");
+    const[notes,changeNotes]=useState("");
     
 
     // const handleDatabaseChange = (event) => {
@@ -62,12 +63,19 @@ const Endpoints = () => {
         changeType(value);
     }
 
+    const updateNotes=(event)=>{
+        changeNotes(event.target.value);
+    }
+
     const buttonClick=()=>{
         var obj={
             "dbId":maindbid,
             "tableId":maintableid,
             "id":localStorage.getItem("id"),
-            "type":type
+            "type":type,
+            "databaseName":databaseName,
+            "tableName":tableName,
+            "notes":notes
         };
         console.log(obj);
         axios.post("https://backend-fyp.herokuapp.com/api/frontend/createApiRoute", obj,{
@@ -158,6 +166,16 @@ const Endpoints = () => {
                     <MenuItem value={item}>{item}</MenuItem>
                 })} */}
             </Select><br /><br />
+             <TextField
+             id="notes"
+             label="Notes"
+             //defaultValue="/riddham/database1"
+             value={notes}
+             onChange={updateNotes}
+             variant="standard"
+         />
+         <br/>
+         <br/>
 
             <TextField
                 id="standard-read-only-input"
@@ -171,6 +189,8 @@ const Endpoints = () => {
             />
                 <br/>
                 <br/>
+
+            
             <Button variant="outlined" onClick={()=>{buttonClick()}}>Get Endpoint</Button>
 
         </Container>
