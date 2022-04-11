@@ -27,7 +27,7 @@ const Login = () => {
             "password": password
         }).then(
             response => {
-                localStorage.setItem("id", response.data.id);
+                localStorage.setItem("id", response.data.uid);
                 localStorage.setItem("isAuthenticated", "true");
                 axios.post("https://backend-fyp.herokuapp.com/api/frontend/genAuthToken", {
                     "id": localStorage.getItem("id"),
